@@ -17,8 +17,8 @@ func main() {
 	fmt.Printf("Non-generic sum: %v and %v\n", SumInts(ints), SumFloats(floats))
 
 	fmt.Printf("Generic sum: %v and %v\n",
-		SumIntsOrFloats[string, int64](ints),
-		SumIntsOrFloats[string, float64](floats))
+		SumIntsOrFloats(ints),
+		SumIntsOrFloats(floats))
 }
 
 func SumIntsOrFloats[K comparable, V int64 | float64](m map[K]V) V {
