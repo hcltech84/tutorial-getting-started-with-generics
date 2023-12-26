@@ -21,12 +21,16 @@ func main() {
 		SumIntsOrFloats(floats))
 }
 
-func SumIntsOrFloats[K comparable, V int64 | float64](m map[K]V) V {
+func SumIntsOrFloats[K comparable, V Number](m map[K]V) V {
 	var s V
 	for _, v := range m {
 		s += v
 	}
 	return s
+}
+
+type Number interface {
+	int64 | float64
 }
 
 func SumInts(m map[string]int64) int64 {
